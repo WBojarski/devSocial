@@ -44,7 +44,7 @@ router.post(
             if (!user) {
                 return res
                     .status(400)
-                    .json({ errors: [{ msg: "Invalid Credentials" }] });
+                    .json({ errors: [{ msg: "Invalid credentials" }] });
             }
 
             const isMatch = await bcrypt.compare(password, user.password);
@@ -52,7 +52,7 @@ router.post(
             if (!isMatch) {
                 return res
                     .status(400)
-                    .json({ errors: [{ msg: "Invalid Credentials" }] });
+                    .json({ errors: [{ msg: "Invalid credentials" }] });
             }
 
             const payload = {
@@ -64,7 +64,7 @@ router.post(
             jwt.sign(
                 payload,
                 config.get("jwtSecret"),
-                { expiresIn: "5 days" },
+                { expiresIn: "7 days" },
                 (err, token) => {
                     if (err) throw err;
                     res.json({ token });
