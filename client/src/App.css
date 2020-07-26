@@ -40,7 +40,7 @@ img {
     margin: auto;
     overflow: hidden;
     padding: 0 2rem;
-    margin-top: 6rem;
+    margin-top: 8rem;
     margin-bottom: 3rem;
 }
 
@@ -492,6 +492,7 @@ button {
 @media (max-width: 700px) {
     .container {
         margin-top: 8rem;
+        position: fixed;
     }
 
     .hide-sm {
